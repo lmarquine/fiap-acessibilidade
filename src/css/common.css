@@ -1,0 +1,81 @@
+/**
+ *
+ * @author      Leonardo Marquine Pereira <lmarquine@gmail.com>
+ * @copyright   2022 Leonardo (http://web2view.com.br)
+ * @license     http://web2view.com.br Copyright
+ * @link        http://web2view.com.br
+ *
+ */
+
+h1 {
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+    font-size: 36px;
+    font-weight: 800;
+    padding: 15px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+}
+
+.header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background: var(--color-white);
+}
+
+.header .container {
+    background: var(--color-white);
+}
+
+.header .container .logo .logo-img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: flex-start;
+    background: var(--color-primary);
+    font-family: var(--font-primary);
+    font-weight: 800;
+}
+
+.top-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.top-nav ul li {
+    display: inline-block;
+    padding: 25px;
+}
+
+.top-nav ul li:hover {
+    color: var(--color-white);
+    text-shadow: 2px 2px 5px var(--color-black);
+    background: var(--color-primary__hover);
+}
+
+.top-nav ul li a {
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 25px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 0 25px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .main-content {
+        padding: 0;
+    }
+}
