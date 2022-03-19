@@ -7,6 +7,10 @@
  *
  */
 
+html {
+    font-size:10px;
+}
+
 h1 {
     font-family: var(--font-secondary);
     color: var(--color-primary);
@@ -65,6 +69,7 @@ h1 {
     text-transform: uppercase;
     text-decoration: none;
     padding: 25px;
+    font-size: 1.8rem;
 }
 
 .main-content {
@@ -73,9 +78,74 @@ h1 {
     padding: 0 25px;
 }
 
+.footer {
+    display: flex;
+    background: var(--color-primary);
+    justify-content: center;
+}
+
+.footer > .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .col {
+    width: calc( 100% / 4);
+    padding: 50px 0;
+    text-decoration: none;
+}
+
+.footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    color: var(--color-white);
+}
+
+.footer .col ul {
+    list-style: none;
+}
+
+.footer .col ul li {
+    padding: 10px 0;
+}
+
+.footer .col li a {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.footer .col li a:hover {
+    color: var(--color-hero-hover);
+}
+
+.about-places {
+    font-family: var(--font-primary);
+    color: var(--color-black);
+    font-size: 2.4rem;
+    margin: 25px 0;
+}
+
 
 @media only screen and (max-width: 768px) {
     .main-content {
         padding: 0;
+    }
+
+    .footer .container {
+        padding: 0 25px;
+        flex-direction: column;
+    }
+
+    .footer .col {
+        width: 100%;
+        padding: 20px;
     }
 }
