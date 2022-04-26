@@ -43,6 +43,27 @@
     padding-bottom: 20px;
 }
 
+.form-label {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+}
+
+.form-label.required:after {
+    display: inline-block;
+    content: '*';
+    color: var(--color-cancel);
+}
+
+.field-block input.required.error {
+    border: 2px solid var(--color-cancel);
+}
+
+.error-message {
+    font-family: var(--font-primary);
+    color: var(--color-cancel);
+    font-size: 1.5rem;
+}
+
 .field {
     display: flex;
     width: 100%;
@@ -128,6 +149,7 @@ input[name="yesno"]:checked+label[for="no"]:before {
     padding: 15px 40px;
     font-family: var(--font-secondary);
     font-weight: 600;
+    font-size: 1.5rem;
     border-radius: 5px;
     cursor: pointer;
 }
