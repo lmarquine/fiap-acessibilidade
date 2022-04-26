@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./src/js/menu-mobile.js"></script>
+    <script type="text/javascript" src="./src/js/controller/validations/form-controller.js"></script>
+    <script type="text/javascript" src="./src/js/controller/accessibility/accessibility-controller.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" sizes="60x60" href="./assets/images/icons/favicon.png">
 </head>
@@ -32,6 +34,13 @@
                 <li><a href="./cadastro.html">Cadastrar Novo Destino</a></li>
                 <li><a href="#">Séries</a></li>
             </ul>
+
+            <ul id="accessibility-options">
+                <li><a class="button fontSize minus" onclick="fontSize('minus')">A-</a></li>
+                <li><a class="button fontSize plus" onclick="fontSize('plus')">A+</a></li>
+                <li><a class="button fontSize reset" onclick="resetFontSize()">Reset</a></li>
+                <li><a class="button fontSize reset" onclick="contrastColors()">Contraste</a></li>
+            </ul>
         </nav>
     </div>
 </header>
@@ -43,83 +52,96 @@
         <form name="register" id="form_register" method="post" action="#">
             <h3 class="form-register__sesssion title">Informações</h3>
             <fieldset class="fieldset fieldset-attraction">
-                <label for="name">Nome do ponto turístico</label>
-                <input class="field field-attraction field-attraction--name"
-                       name="name"
-                       type="text"
-                       id="name"
-                       placeholder="Nome da atração"
-                       autofocus
-                       required/>
+                <div class="field-block field-name">
+                    <label class="form-label required" for="name">Nome do ponto turístico</label>
+                    <input class="field field-attraction field-attraction--name required focused"
+                           name="name"
+                           type="text"
+                           id="name"
+                           placeholder="Nome da atração"
+                           autofocus
+                           aria-required="true"/>
+                </div>
 
-                <label for="country">País</label>
-                <input list="country__options"
-                       id="country"
-                       class="field field-attraction field-attraction__country country"
-                       name="country"
-                       placeholder="Selecione um país"
-                       autocomplete="no"
-                       required/>
-                <datalist id="country__options">
-                    <option class="option brazil"
-                            data-value="0"
-                            value="Brasil">
-                    <option class="option usa"
-                            data-value="1"
-                            value="Estados Unidos">
-                    <option class="option england"
-                            data-value="2"
-                            value="Inglaterra">
-                </datalist>
+                <div class="field-block field-country">
+                    <label class="form-label required" for="country">País</label>
+                    <input list="country__options"
+                           id="country"
+                           class="field field-attraction field-attraction__country country required"
+                           name="country"
+                           placeholder="Selecione um país"
+                           autocomplete="no"
+                           aria-required="true"/>
+                    <datalist id="country__options">
+                        <option class="option brazil"
+                                data-value="0"
+                                value="Brasil">
+                        <option class="option usa"
+                                data-value="1"
+                                value="Estados Unidos">
+                        <option class="option england"
+                                data-value="2"
+                                value="Inglaterra">
+                    </datalist>
+                </div>
 
-                <label for="street">Rua</label>
-                <input class="field field-attraction field-attraction__address street"
-                       name="street"
-                       type="text"
-                       id="street"
-                       placeholder="Rua"
-                       required/>
+                <div class="field-block field-street">
+                    <label class="form-label required" for="street">Rua</label>
+                    <input class="field field-attraction field-attraction__address street required"
+                           name="street"
+                           type="text"
+                           id="street"
+                           placeholder="Rua"
+                           aria-required="true"/>
+                </div>
 
-                <label for="number">Número</label>
-                <input class="field field-attraction field-attraction__address number"
-                       name="number"
-                       type="text"
-                       id="number"
-                       placeholder="Número"
-                       required/>
+                <div class="field-block field-number">
+                    <label class="form-label required" for="number">Número</label>
+                    <input class="field field-attraction field-attraction__address number required"
+                           name="number"
+                           type="text"
+                           id="number"
+                           placeholder="Número"
+                           aria-required="true"/>
+                </div>
 
-                <label for="neighborhood">Bairro</label>
-                <input class="field field-attraction field-attraction__address neighborhood"
-                       name="neighborhood"
-                       type="text"
-                       id="neighborhood"
-                       placeholder="Bairro"
-                       required/>
+                <div class="field-block field-neighborhood">
+                    <label class="form-label required" for="neighborhood">Bairro</label>
+                    <input class="field field-attraction field-attraction__address neighborhood required"
+                           name="neighborhood"
+                           type="text"
+                           id="neighborhood"
+                           placeholder="Bairro"
+                           aria-required="true"/>
+                </div>
 
-                <label for="city">Cidade</label>
-                <input class="field field-attraction field-attraction__address city"
-                       name="city"
-                       type="text"
-                       id="city"
-                       placeholder="Cidade"
-                       required/>
+                <div class="field-block field-city">
+                    <label class="form-label required" for="city">Cidade</label>
+                    <input class="field field-attraction field-attraction__address city required"
+                           name="city"
+                           type="text"
+                           id="city"
+                           placeholder="Cidade"
+                           aria-required="true"/>
+                </div>
+
             </fieldset>
 
             <h3 class="form-register__sesssion title">Contato</h3>
             <fieldset class="fieldset fieldset-contact">
-                <label for="website">Website</label>
+                <label class="form-label" for="website">Website</label>
                 <input type="url"
                        class="field field-contact__website"
                        id="website"
                        placeholder="Website"/>
 
-                <label for="email">E-mail</label>
+                <label class="form-label" for="email">E-mail</label>
                 <input type="email"
                        class="field field-contact__email"
                        id="email"
                        placeholder="Email"/>
 
-                <label for="telephone">Telefone</label>
+                <label class="form-label" for="telephone">Telefone</label>
                 <input type="tel"
                        class="field field-telephone"
                        name="telephone"
@@ -130,19 +152,21 @@
             <h3 class="form-register__sesssion title">Funcionamento</h3>
             <fieldset class="fieldset fieldset-time">
                 <div class="from">
-                    <label for="from">Aberto desde</label>
+                    <label class="form-label required" for="from">Aberto desde</label>
                     <input class="field field-time field-time__hour"
                            name="from"
                            type="date"
-                           id="from"/>
+                           id="from"
+                           aria-required="true"/>
                 </div>
 
                 <div class="to">
-                    <label for="to">Aberto até</label>
+                    <label class="form-label required" for="to">Aberto até</label>
                     <input class="field field-time field-time__hour"
                            name="to"
                            type="date"
-                           id="to"/>
+                           id="to"
+                           aria-required="true"/>
                 </div>
             </fieldset>
 
@@ -150,23 +174,25 @@
             <fieldset class="fieldset fieldset-oppened">
                 <div class="fieldset fieldset-hours">
                     <div class="fieldset-hour-open">
-                        <label for="open">Horário de abertura</label>
+                        <label class="form-label required" for="open">Horário de abertura</label>
                         <input class="field field-time fieldset-hours-open"
                                name="open"
                                type="time"
-                               id="open"/>
+                               id="open"
+                               aria-required="true"/>
                     </div>
 
                     <div class="fieldset-hour-close">
-                        <label for="close">Horário de fechamento</label>
+                        <label class="form-label required" for="close">Horário de fechamento</label>
                         <input class="field field-time fieldset-hours-close"
                                name="close"
                                type="time"
-                               id="close"/>
+                               id="close"
+                               aria-required="true"/>
                     </div>
                 </div>
 
-                <label for="price">Preço</label>
+                <label class="form-label" for="price">Preço</label>
                 <input class="field field-price field-price__amount price"
                        name="price"
                        type="text"
@@ -176,22 +202,22 @@
 
             <h3 class="form-register__sesssion title">Descrição</h3>
             <fieldset class="fieldset fieldset-description">
-                <label for="short_description">Curta descrição</label>
-                <textarea class="field field-description field-description__short short_description"
+                <label class="form-label required" for="short_description">Curta descrição</label>
+                <textarea class="field field-description field-description__short short_description required"
                           name="short_description"
                           id="short_description"
                           maxlength="200"
                           placeholder="Descrição curta da atração"
-                          required>
+                          aria-required="true">
                 </textarea>
 
-                <label for="description">Descrição completa</label>
-                <textarea class="field field-description field-description__full description"
+                <label class="form-label required" for="description">Descrição completa</label>
+                <textarea class="field field-description field-description__full description required"
                           name="description"
                           id="description"
                           maxlength="3000"
                           placeholder="Descrição completa da atração"
-                          required>
+                          aria-required="true">
                 </textarea>
             </fieldset>
 
@@ -202,7 +228,7 @@
                        name="yesno"
                        id="yes"
                        value=”1”>
-                <label for="yes">
+                <label class="form-label" for="yes">
                     Sim
                 </label>
                 <input type="radio"
@@ -210,7 +236,7 @@
                        name="yesno"
                        id="no"
                        value=”0”>
-                <label for="no">Não</label>
+                <label class="form-label" for="no">Não</label>
             </fieldset>
 
             <h3 class="form-register__sesssion title">Avisos</h3>
@@ -218,7 +244,7 @@
                 <select class="field field-alerts"
                         name="alert"
                         id="alert"
-                        required>
+                        aria-required="true">
                     <option class="field-alerts__option" value="0" disabled selected>
                         Selecione uma opção
                     </option>
@@ -236,21 +262,33 @@
 
             <h3 class="form-register__sesssion title">Imagens</h3>
             <fieldset class="fieldset fieldset-photos">
-                <label for="photo">Selecione o arquivo</label>
+                <label class="form-label" for="photo">Selecione o arquivo</label>
                 <input type="file"
                        id="photo"
                        multiple>
             </fieldset>
 
             <div class="actions">
-                <button class="btn btn-submit" type="submit">Cadastrar</button>
-                <button class="btn btn-cancel" type="reset">Cancelar</button>
+                <button class="btn btn-submit" type="submit" role="button">Cadastrar</button>
+                <button class="btn btn-cancel" type="reset" role="button">Cancelar</button>
             </div>
 
         </form>
     </div>
 </div>
 
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+<script type="text/javascript" src="./src/js/form-validation.js"></script>
+<script type="text/javascript" src="./src/js/accessibility.js"></script>
 <script type="text/javascript" src="./src/js/slider-home.js"></script>
 </body>
 </html>

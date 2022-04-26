@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gulliver Traveller</title>
     <link rel="stylesheet" type="text/css" href="./src/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/accessibility.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./src/js/menu-mobile.js"></script>
+    <script src="./src/js/accessibility.js"></script>
+    <script type="text/javascript" src="./src/js/controller/validations/form-controller.js"></script>
+    <script type="text/javascript" src="./src/js/controller/accessibility/accessibility-controller.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" sizes="60x60" href="./assets/images/icons/favicon.png">
 </head>
@@ -30,7 +34,14 @@
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="#">Destinos</a></li>
                 <li><a href="./cadastro.html">Cadastrar Novo Destino</a></li>
-                <li><a href="./series.html">Séries</a></li>
+                <li><a href="#">Séries</a></li>
+            </ul>
+
+            <ul id="accessibility-options">
+                <li><a class="button fontSize minus" onclick="fontSize('minus')">A-</a></li>
+                <li><a class="button fontSize plus" onclick="fontSize('plus')">A+</a></li>
+                <li><a class="button fontSize reset" onclick="resetFontSize()">Reset</a></li>
+                <li><a class="button fontSize reset" onclick="contrastColors()">Contraste</a></li>
             </ul>
         </nav>
     </div>
@@ -42,13 +53,13 @@
             <div class="slider-item">
                 <picture>
                     <source media="(min-width: 768px)" srcset="./assets/images/los-angeles.png">
-                    <img src="./assets/images/los-angeles.png" alt="Banner image Los Angeles">
+                    <img src="./assets/images/los-angeles.png" alt="Belo panorama do horizonte de Los Angeles e MacArthur Park durante um dia vibrante.">
                 </picture>
             </div>
             <div class="slider-item">
                 <picture>
                     <source media="(min-width: 768px)" srcset="./assets/images/sao-paulo.png">
-                    <img src="./assets/images/sao-paulo.png" alt="Banner image São Paulo">
+                    <img src="./assets/images/sao-paulo.png" alt="Ponte estaiada em São Paulo, Brasil">
                 </picture>
             </div>
         </div>
@@ -90,6 +101,18 @@
     </div>
 </footer>
 
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+<script type="text/javascript" src="./src/js/form-validation.js"></script>
+<script type="text/javascript" src="./src/js/accessibility.js"></script>
 <script type="text/javascript" src="./src/js/slider-home.js"></script>
 </body>
 </html>
