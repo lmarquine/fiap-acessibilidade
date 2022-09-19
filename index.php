@@ -31,9 +31,9 @@
         <nav id="nav" class="top-nav">
             <button id="btn-mobile"></button>
             <ul id="menu">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#">Destinos</a></li>
-                <li><a href="./cadastro.html">Cadastrar Novo Destino</a></li>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./hospedagens.php">Hospedagens</a></li>
+                <li><a href="./cadastro.php">Cadastrar Novo Destino</a></li>
                 <li><a href="#">Séries</a></li>
             </ul>
 

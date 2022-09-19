@@ -1,0 +1,136 @@
+.featured .title {
+    font-family: var(--font-secondary);
+    color: var(--color-black);
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.featured .description {
+    font-family: var(--font-secondary);
+    color: var(--color-black);
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+#map {
+    height: 550px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0 !important;
+}
+
+table {
+    font-size: 12px;
+}
+
+.hotel-search {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.results {
+    display: flex;
+    margin: 40px 0;
+    justify-content: center;
+}
+
+#map {
+    position: relative;
+    overflow: hidden;
+    width: 750px;
+}
+
+#listing {
+    position: relative;
+    width: 200px;
+    overflow: auto;
+    cursor: pointer;
+    overflow-x: hidden;
+    margin: 0 40px;
+    height: 550px;
+    width: 100%;
+    max-width: 255px;
+}
+
+#findhotels {
+    font-size: 14px;
+}
+
+#locationField {
+    margin: 10px 0;
+}
+
+#controls {
+    width: 100%;
+}
+
+#autocomplete {
+    width: 100%;
+    max-width: 406px;
+    height: 50px;
+    padding: 0 20px;
+    border: 1px solid var(--color-primary);
+    border-radius: 10px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+#country {
+    width: 100%;
+    max-width: 406px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.placeIcon {
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+}
+
+.hotelIcon {
+    width: 24px;
+    height: 24px;
+}
+
+#resultsTable {
+    border-collapse: collapse;
+    width: 240px;
+}
+
+#rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+}
+
+.iw_table_row {
+    height: 18px;
+}
+
+.iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+}
+
+.iw_table_icon {
+    text-align: right;
+}
